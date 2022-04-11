@@ -8,7 +8,7 @@ With following role can be git for users configured.
 ## Installation
 
 ```bash
-ansible-galaxy install volker_raschek.git_role
+ansible-galaxy install volker_raschek.git
 ```
 
 ## Supported distributions
