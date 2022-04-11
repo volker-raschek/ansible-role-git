@@ -1,0 +1,14 @@
+#jinja2: lstrip_blocks: "True", trim_blocks: "True"
+#
+# {{ ansible_managed }}
+#
+
+{% for section, values in item.value.config.items() %}
+[{{ section }}]
+  {% for key, value in values.items() %}
+    {% if value | length > 0 %}
+    {{ key }} = {{ value }}
+    {% endif %}
+  {% endfor %}
+
+{% endfor %}
