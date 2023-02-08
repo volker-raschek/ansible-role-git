@@ -6,7 +6,7 @@
     key: "{{ item.key }}"
 
 - name: Create git config directory for {{ item.key }}
-  file:
+  ansible.builtin.file:
     dest: "{{ getent_passwd[item.key][4] }}/.config/git"
     owner: "{{ item.key }}"
     group: "{{ getent_passwd[item.key][2] }}"
@@ -14,7 +14,7 @@
     mode: 0755
 
 - name: Create global git config files
-  template:
+  ansible.builtin.template:
     src: "{{ filename }}.j2"
     dest: "{{ getent_passwd[item.key][4] }}/{{ filename }}"
     owner: "{{ item.key }}"
