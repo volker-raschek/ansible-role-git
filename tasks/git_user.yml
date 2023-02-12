@@ -1,11 +1,11 @@
 ---
 
-- name: Get entity for user {{ item.key }}
-  getent:
+- name: "Determine entries via NSS for unix user: {{ item.key }}"
+  ansible.builtin.getent:
     database: passwd
     key: "{{ item.key }}"
 
-- name: Create git config directory for {{ item.key }}
+- name: "Create git config directory for unix user: {{ item.key }}"
   ansible.builtin.file:
     dest: "{{ getent_passwd[item.key][4] }}/.config/git"
     owner: "{{ item.key }}"

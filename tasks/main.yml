@@ -1,7 +1,7 @@
 ---
 
 - name: Include OS-specific variables
-  include_vars: "{{ ansible_os_family }}.yml"
+  ansible.builtin.include_vars: "{{ ansible_os_family }}.yml"
 
 - name: Install git and dependencies
   ansible.builtin.package:
@@ -10,6 +10,6 @@
   with_items: "{{ git_package_names }}"
 
 - name: Configure git
-  include_tasks: git_user.yml
+  ansible.builtin.include_tasks: git_user.yml
   with_dict:
   - "{{ git_users }}"
