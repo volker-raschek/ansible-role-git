@@ -11,7 +11,7 @@
     owner: "{{ item.key }}"
     group: "{{ getent_passwd[item.key][2] }}"
     state: directory
-    mode: 0755
+    mode: "0755"
 
 - name: Create global git config files
   ansible.builtin.template:
@@ -19,7 +19,7 @@
     dest: "{{ getent_passwd[item.key][4] }}/{{ filename }}"
     owner: "{{ item.key }}"
     group: "{{ getent_passwd[item.key][2] }}"
-    mode: 0644
+    mode: "0644"
   with_items:
   - .config/git/config
   - .config/git/message
