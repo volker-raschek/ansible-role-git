@@ -3,6 +3,10 @@
 git_users: []
   # github:
   #   config:
+  #     commit:
+  #       gpgSign: "true"
   #     user:
   #       name: "root"
   #       email: root@localhost
+  #       signingKey: gpg-fingerprint
+  
