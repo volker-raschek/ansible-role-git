@@ -9,7 +9,7 @@
   block:
   - name: Add merge tool
     ansible.builtin.set_fact:
-      _git_package_names: "{{ _git_package_names + [ git_package_name_merge_tool ] }}"
+      _git_package_names: "{{ _git_package_names + [git_package_name_merge_tool] }}"
     when: git_install_merge_tool is defined and
           git_install_merge_tool
   - name: Install git and dependencies
