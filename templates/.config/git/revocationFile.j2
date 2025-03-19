@@ -1,0 +1,9 @@
+#
+# {{ ansible_managed }}
+#
+
+{% if item.value.revocationFile is defined and item.value.revocationFile | length > 0%}
+{% for entry in item.value.revocationFile %}
+{{ entry }}
+{% endfor %}
+{% endif %}

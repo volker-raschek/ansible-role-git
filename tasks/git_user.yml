@@ -21,8 +21,10 @@
     group: "{{ getent_passwd[item.key][2] }}"
     mode: "0644"
   with_items:
+  - .config/git/allowedSignersFile
   - .config/git/config
   - .config/git/message
   - .config/git/ignore
+  - .config/git/revocationFile
   loop_control:
     loop_var: filename

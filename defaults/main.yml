@@ -5,6 +5,10 @@ git_package_name_merge_tool: meld
 
 git_users: []
   # github:
+  #   allowedSignersFile:
+  #   - principals:
+  #     - max.mustermann@example.com
+  #     publicSSHKey: ssh-rsa AAAAX1...
   #   config:
   #     commit:
   #       gpgSign: "true"
@@ -12,3 +16,5 @@ git_users: []
   #       name: "root"
   #       email: root@localhost
   #       signingKey: gpg-fingerprint
+  #   revocationFile:
+  #   - ssh-rsa AAAAX1...

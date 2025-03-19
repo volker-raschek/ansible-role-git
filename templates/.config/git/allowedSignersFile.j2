@@ -1,0 +1,9 @@
+#
+# {{ ansible_managed }}
+#
+
+{% if item.value.allowedSignersFile is defined and item.value.allowedSignersFile | length > 0%}
+{% for entry in item.value.allowedSignersFile %}
+{{ entry.principals | join(',') }} {{ entry.publicSSHKey }}
+{% endfor %}
+{% endif %}
