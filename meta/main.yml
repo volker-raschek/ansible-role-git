@@ -1,4 +1,5 @@
 galaxy_info:
+  namespace: volker_raschek
   role_name: git
   author: Markus Pesch
   description: Role to install and configure git for local users
