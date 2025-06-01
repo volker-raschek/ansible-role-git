@@ -1,6 +1,5 @@
 # git-role
 
-[![Build Status](https://drone.cryptic.systems/api/badges/volker.raschek/git-role/status.svg)](https://drone.cryptic.systems/volker.raschek/git-role)
 [![Ansible Role](https://img.shields.io/ansible/role/d/58759)](https://galaxy.ansible.com/volker_raschek/git)
 
 With following role can be git for users configured.
