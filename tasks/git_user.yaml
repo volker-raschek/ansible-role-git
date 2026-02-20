@@ -7,18 +7,18 @@
 
 - name: "Create git config directory for unix user: {{ item.key }}"
   ansible.builtin.file:
-    dest: "{{ getent_passwd[item.key][4] }}/.config/git"
+    dest: "{{ ansible_facts['getent_passwd'][item.key][4] }}/.config/git"
     owner: "{{ item.key }}"
-    group: "{{ getent_passwd[item.key][2] }}"
+    group: "{{ ansible_facts['getent_passwd'][item.key][2] }}"
     state: directory
     mode: "0755"
 
 - name: Create global git config files
   ansible.builtin.template:
     src: "{{ filename }}.j2"
-    dest: "{{ getent_passwd[item.key][4] }}/{{ filename }}"
+    dest: "{{ ansible_facts['getent_passwd'][item.key][4] }}/{{ filename }}"
     owner: "{{ item.key }}"
-    group: "{{ getent_passwd[item.key][2] }}"
+    group: "{{ ansible_facts['getent_passwd'][item.key][2] }}"
     mode: "0644"
   with_items:
   - .config/git/allowedSignersFile
